@@ -2,7 +2,7 @@
 # This will install nagios
 
 - name: install nagios 
-  yum: pkg={{ item }} state=present
+  action: apt pkg={{ item }} state=installed
   with_items:
    - nagios
    - nagios-plugins
@@ -12,7 +12,7 @@
    - nagios-plugins-http
    - nagios-plugins-mysql
    - nagios-devel
-  notify: restart httpd
+  notify: restart apache2
 
 - name: create nagios config dir
   file: path=/etc/nagios/ansible-managed state=directory
