@@ -8,13 +8,13 @@
 #  copy: src=RPM-GPG-KEY-EPEL-6 dest=/etc/pki/rpm-gpg
 
 - name: install some useful nagios plugins 
-  action: apt pkg={{ item }} state=install
+  action: apt pkg={{ item }} state=installed
   with_items:
    - nagios-nrpe-server
    - nagios-plugins
    
 - name: Install ntp 
-  action: apt pkg=ntp state=install
+  action: apt pkg=ntp state=installed
  
 
 - name: Configure ntp file
