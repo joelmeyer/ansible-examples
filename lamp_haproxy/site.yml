@@ -8,7 +8,8 @@
 
 # Configure and deploy database servers.
 - hosts: dbservers
-  user: root
+  user: pi
+  sudo: yes
   roles:
   - db
 
@@ -16,7 +17,8 @@
 # the 'base-apache' role which simply sets up Apache, and 'web' which includes
 # our example web application.
 - hosts: webservers
-  user: root
+  user: pi
+  sudo: yes
 
   roles:
   - base-apache
@@ -24,13 +26,15 @@
 
 # Configure and deploy the load balancer(s).
 - hosts: lbservers
-  user: root
+  user: pi
+  sudo: yes
   roles:
   - haproxy
 
 # Configure and deploy the Nagios monitoring node(s).
 - hosts: monitoring
-  user: root
+  user: pi
+  sudo: yes
   roles:
   - base-apache
   - nagios
