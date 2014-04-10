@@ -4,7 +4,7 @@
 # Ethernet interface on which the web server should listen.
 # Defaults to the first interface. Change this to:
 #
-  iface: eth0
+iface: eth0
 #
 # ...to override.
 #

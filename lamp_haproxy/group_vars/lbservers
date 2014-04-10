@@ -18,7 +18,7 @@ balance: roundrobin
 # Ethernet interface on which the load balancer should listen
 # Defaults to the first interface. Change this to:
 #
-  iface: wlan0
+iface: wlan0
 #
 # ...to override.
 #
