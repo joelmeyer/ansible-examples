@@ -2,7 +2,7 @@
 
 # httpd is handled by the base-apache role upstream
 - name: Install php and git 
-  action: apt pkg={{ item }} state=installed
+  apt: pkg={{ item }} state=present
   with_items:
    - php5
    - php5-mysql

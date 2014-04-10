@@ -2,7 +2,7 @@
 # This will install nagios
 
 - name: install nagios 
-  action: apt pkg={{ item }} state=installed
+  apt: pkg={{ item }} state=present
   with_items:
    - nagios
    - nagios-plugins

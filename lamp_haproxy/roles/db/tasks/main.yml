@@ -2,7 +2,7 @@
 # This role will install MySQL and create db user and give permissions.
 
 - name: Install Mysql package
-  action: name={{ item }} state=install
+  apt: pkg={{ item }} state=present
   with_items:
    - mysql-server
    - mysql-client
@@ -19,7 +19,7 @@
   - restart mysql
 
 - name: Start Mysql Service
-  action: service name=mysqld state=started enabled=true
+  service: name=mysqld state=started enabled=true
 
 - name: Create Application Database
   mysql_db: name={{ dbname }} state=present

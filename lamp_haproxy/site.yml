@@ -37,4 +37,4 @@
   sudo: yes
   roles:
   - base-apache
-  - nagios
+#  - nagios
